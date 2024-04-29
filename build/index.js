@@ -51,10 +51,126 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {Element} Element to render.
  */
-function Edit() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Reusable Static Block – hello from the editor!', 'reusable-static-block'));
+function Edit(attributes, setAttributes) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
+    className: "container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: "container__section"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__subtitle"
+  }, "OUR WORK"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__title"
+  }, "Finished Project"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__description"
+  }, "This section showcases some of our completed projects. Each project demonstrates our commitment to quality and excellence.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-1.jpg",
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-title"
+  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-subtitle"
+  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-description"
+  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-2.jpg",
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-title"
+  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-subtitle"
+  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-description"
+  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-3.jpg",
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-title"
+  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-subtitle"
+  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-description"
+  }, "This project involved renovating an old building into a modern office space."))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "section-break"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/section-break.png",
+    alt: ""
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: "container__section"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__subtitle"
+  }, "OUR WORK"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__title"
+  }, "Finished Project"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__description"
+  }, "This section showcases some of our completed projects. Each project demonstrates our commitment to quality and excellence.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-4.jpg",
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "social-bar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/socials.png",
+    alt: "Socials"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-title"
+  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-subtitle"
+  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-description"
+  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-5.jpg",
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "social-bar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/socials.png",
+    alt: "Socials"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-title"
+  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-subtitle"
+  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-description"
+  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-6.jpg",
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "social-bar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/socials.png",
+    alt: "Socials"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-title"
+  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-subtitle"
+  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-description"
+  }, "This project involved renovating an old building into a modern office space."))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "section-break"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/section-break.png",
+    alt: ""
+  })))));
 }
 
 /***/ }),
