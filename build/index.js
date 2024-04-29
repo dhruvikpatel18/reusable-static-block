@@ -18,7 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -33,6 +35,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
+
 
 
 /**
@@ -51,126 +54,439 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {Element} Element to render.
  */
-function Edit(attributes, setAttributes) {
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    section1SubTitle,
+    section1Title,
+    section1Description,
+    section1Image1,
+    section1Image1Title,
+    section1Image1SubTitle,
+    section1Image1Description,
+    section1Image2,
+    section1Image2Title,
+    section1Image2SubTitle,
+    section1Image2Description,
+    section1Image3,
+    section1Image3Title,
+    section1Image3SubTitle,
+    section1Image3Description,
+    section2SubTitle,
+    section2Title,
+    section2Description,
+    section2Image1,
+    section2Image1Title,
+    section2Image1SubTitle,
+    section2Image1Description,
+    section2Image2,
+    section2Image2Title,
+    section2Image2SubTitle,
+    section2Image2Description,
+    section2Image3,
+    section2Image3Title,
+    section2Image3SubTitle,
+    section2Image3Description,
+    socialImages,
+    sectionBreak
+  } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     className: "container"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-1 Image"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => setAttributes({
+      section1Image1: media.url
+    }),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      variant: "secondary"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Project-1 Image"))
+  }), section1Image1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section1Image1,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-1 Image Preview"),
+    style: {
+      width: "40%",
+      marginTop: "10px",
+      marginLeft: "30px"
+    } // Simple preview styling
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-2 Image"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => setAttributes({
+      section1Image2: media.url
+    }),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      variant: "secondary"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Project-2 Image"))
+  }), section1Image2 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section1Image2,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-2 Image Preview"),
+    style: {
+      width: "40%",
+      marginTop: "10px",
+      marginLeft: "30px"
+    } // Simple preview styling
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-3 Image"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => setAttributes({
+      section1Image3: media.url
+    }),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      variant: "secondary"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Project-3 Image"))
+  }), section1Image3 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section1Image3,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-3 Image Preview"),
+    style: {
+      width: "40%",
+      marginTop: "10px",
+      marginLeft: "30px"
+    } // Simple preview styling
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User-1 Image"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => setAttributes({
+      section2Image1: media.url
+    }),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      variant: "secondary"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select User-1 Image"))
+  }), section2Image1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section2Image1,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User-1 Image Preview"),
+    style: {
+      width: "40%",
+      marginTop: "10px",
+      marginLeft: "30px"
+    } // Simple preview styling
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User-2 Image"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => setAttributes({
+      section2Image2: media.url
+    }),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      variant: "secondary"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select User-2 Image"))
+  }), section2Image2 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section2Image2,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User-2 Image Preview"),
+    style: {
+      width: "40%",
+      marginTop: "10px",
+      marginLeft: "30px"
+    } // Simple preview styling
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User-3 Image"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => setAttributes({
+      section2Image3: media.url
+    }),
+    allowedTypes: ["image"],
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      variant: "secondary"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select User-3 Image"))
+  }), section2Image3 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section2Image3,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User-3 Image Preview"),
+    style: {
+      width: "40%",
+      marginTop: "10px",
+      marginLeft: "30px"
+    } // Simple preview styling
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: "container__section"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container__header"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container__subtitle"
-  }, "OUR WORK"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container__title"
-  }, "Finished Project"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container__description"
-  }, "This section showcases some of our completed projects. Each project demonstrates our commitment to quality and excellence.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "container__subtitle",
+    value: section1SubTitle,
+    onChange: newSection1SubTitle => setAttributes({
+      section1SubTitle: newSection1SubTitle
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Section 1 Subtitle")
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "container__title",
+    value: section1Title,
+    onChange: newSection1Title => setAttributes({
+      section1Title: newSection1Title
+    }),
+    placeholder: "Section 1 Title"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "container__description",
+    value: section1Description,
+    onChange: newSection1Description => setAttributes({
+      section1Description: newSection1Description
+    }),
+    placeholder: "Section 1 Description"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-card"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-1.jpg",
-    alt: "Project 1"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-title"
-  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-subtitle"
-  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-description"
-  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    src: section1Image1,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project 1")
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-title",
+    value: section1Image1Title,
+    onChange: newSection1Image1Title => setAttributes({
+      section1Image1Title: newSection1Image1Title
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section1Image1SubTitle,
+    onChange: newSection1Image1SubTitle => setAttributes({
+      section1Image1SubTitle: newSection1Image1SubTitle
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-description",
+    value: section1Image1Description,
+    onChange: newSection1Image1Description => setAttributes({
+      section1Image1Description: newSection1Image1Description
+    }),
+    placeholder: "Section 1 Description"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-card"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-2.jpg",
-    alt: "Project 1"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-title"
-  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-subtitle"
-  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-description"
-  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    src: section1Image2,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project 2")
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-title",
+    value: section1Image2Title,
+    onChange: newSection1Image2Title => setAttributes({
+      section1Image2Title: newSection1Image2Title
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section1Image2SubTitle,
+    onChange: newSection1Image2SubTitle => setAttributes({
+      section1Image2SubTitle: newSection1Image2SubTitle
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-description",
+    value: section1Image2Description,
+    onChange: newSection1Image2Description => setAttributes({
+      section1Image2Description: newSection1Image2Description
+    }),
+    placeholder: "Section 1 Description"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-card"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-3.jpg",
-    alt: "Project 1"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-title"
-  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-subtitle"
-  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-description"
-  }, "This project involved renovating an old building into a modern office space."))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    src: section1Image3,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project 3")
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-title",
+    value: section1Image3Title,
+    onChange: newSection1Image3Title => setAttributes({
+      section1Image3Title: newSection1Image3Title
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section1Image3SubTitle,
+    onChange: newSection1Image3SubTitle => setAttributes({
+      section1Image3SubTitle: newSection1Image3SubTitle
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-description",
+    value: section1Image3Description,
+    onChange: newSection1Image3Description => setAttributes({
+      section1Image3Description: newSection1Image3Description
+    }),
+    placeholder: "Section 1 Description"
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "section-break"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/section-break.png",
-    alt: ""
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    src: sectionBreak,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Section Break")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: "container__section"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container__header"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container__subtitle"
-  }, "OUR WORK"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container__title"
-  }, "Finished Project"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container__description"
-  }, "This section showcases some of our completed projects. Each project demonstrates our commitment to quality and excellence.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "container__subtitle",
+    value: section2SubTitle,
+    onChange: newSection2SubTitle => setAttributes({
+      section2SubTitle: newSection2SubTitle
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Section 1 Subtitle")
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "container__title",
+    value: section2Title,
+    onChange: newSection2Title => setAttributes({
+      section2Title: newSection2Title
+    }),
+    placeholder: "Section 1 Title"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "container__description",
+    value: section2Description,
+    onChange: newSection2Description => setAttributes({
+      section2Description: newSection2Description
+    }),
+    placeholder: "Section 1 Description"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-card"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-4.jpg",
-    alt: "Project 1"
+    src: section2Image1,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User 1")
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "social-bar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/socials.png",
-    alt: "Socials"
+    src: socialImages,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Social icons")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-title",
+    value: section2Image1Title,
+    onChange: newSection2Image1Title => setAttributes({
+      section2Image1Title: newSection2Image1Title
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section2Image1SubTitle,
+    onChange: newSection2Image1SubTitle => setAttributes({
+      section2Image1SubTitle: newSection2Image1SubTitle
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-description",
+    value: section2Image1Description,
+    onChange: newSection2Image1Description => setAttributes({
+      section2Image1Description: newSection2Image1Description
+    }),
+    placeholder: "Section 1 Description"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-title"
-  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-subtitle"
-  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-description"
-  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-card"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-5.jpg",
-    alt: "Project 1"
+    src: section2Image2,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User 2")
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "social-bar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/socials.png",
-    alt: "Socials"
+    src: socialImages,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Social icons")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-title",
+    value: section2Image2Title,
+    onChange: newSection2Image2Title => setAttributes({
+      section2Image2Title: newSection2Image2Title
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section2Image2SubTitle,
+    onChange: newSection2Image2SubTitle => setAttributes({
+      section2Image2SubTitle: newSection2Image2SubTitle
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-description",
+    value: section2Image2Description,
+    onChange: newSection2Image2Description => setAttributes({
+      section2Image2Description: newSection2Image2Description
+    }),
+    placeholder: "Section 1 Description"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-title"
-  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-subtitle"
-  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-description"
-  }, "This project involved renovating an old building into a modern office space.")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-card"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/image-6.jpg",
-    alt: "Project 1"
+    src: section2Image3,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("User 3")
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "social-bar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/socials.png",
-    alt: "Socials"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-title"
-  }, "Project 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-subtitle"
-  }, "Completed"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-description"
-  }, "This project involved renovating an old building into a modern office space."))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    src: socialImages,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Social icons")
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-title",
+    value: section2Image3Title,
+    onChange: newSection2Image3Title => setAttributes({
+      section2Image3Title: newSection2Image3Title
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section2Image3SubTitle,
+    onChange: newSection2Image3SubTitle => setAttributes({
+      section2Image3SubTitle: newSection2Image3SubTitle
+    }),
+    placeholder: "Section 1 Description"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "div",
+    className: "card-description",
+    value: section2Image3Description,
+    onChange: newSection2Image3Description => setAttributes({
+      section2Image3Description: newSection2Image3Description
+    }),
+    placeholder: "Section 1 Description"
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "section-break"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: "http://localhost:1234/wp-test/wp-content/plugins/reusable-static-block/assets/section-break.png",
-    alt: ""
-  })))));
+    src: sectionBreak,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Section Break")
+  }))));
 }
 
 /***/ }),
@@ -211,12 +527,150 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Use the dynamic plugin URL provided by PHP
+const PLUGIN_URL = ReusableStaticBlockData.pluginUrl;
+
+//Define blockAttributes
+const blockAttributes = {
+  section1SubTitle: {
+    type: 'string',
+    default: 'our work'
+  },
+  section1Title: {
+    type: 'string',
+    default: 'Finished Project'
+  },
+  section1Description: {
+    type: 'string',
+    default: 'Passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don`t look even slightly believable. If you are going to use a passage of Lorem Ipsum. you need to be sure.'
+  },
+  section1Image1: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/image-1.jpg`
+  },
+  section1Image1Title: {
+    type: 'string',
+    default: 'Uses a dictionary'
+  },
+  section1Image1SubTitle: {
+    type: 'string',
+    default: 'Look words which'
+  },
+  section1Image1Description: {
+    type: 'string',
+    default: 'Passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.'
+  },
+  section1Image2: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/image-2.jpg`
+  },
+  section1Image2Title: {
+    type: 'string',
+    default: 'Randomised Words'
+  },
+  section1Image2SubTitle: {
+    type: 'string',
+    default: 'Words which don'
+  },
+  section1Image2Description: {
+    type: 'string',
+    default: 'Lorem Ipsum available, but theajority have suffered alteration in some form, by injected humour.'
+  },
+  section1Image3: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/image-3.jpg`
+  },
+  section1Image3Title: {
+    type: 'string',
+    default: 'Suffered Alteration'
+  },
+  section1Image3SubTitle: {
+    type: 'string',
+    default: 'Don`t look words which'
+  },
+  section1Image3Description: {
+    type: 'string',
+    default: 'Suffered alteration in some form, by injected humour, or randomised words which don`t look alteration in some form.'
+  },
+  ///////////////////////////////////////////////////////////////////
+
+  section2SubTitle: {
+    type: 'string',
+    default: 'our team'
+  },
+  section2Title: {
+    type: 'string',
+    default: 'Excellent Expert Advisor'
+  },
+  section2Description: {
+    type: 'string',
+    default: 'Passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don`t look even slightly believable. If you are going to use a passage of Lorem Ipsum. you need to be sure.'
+  },
+  section2Image1: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/image-4.jpg`
+  },
+  section2Image1Title: {
+    type: 'string',
+    default: 'Dr. Danial'
+  },
+  section2Image1SubTitle: {
+    type: 'string',
+    default: 'Slightly believable'
+  },
+  section2Image1Description: {
+    type: 'string',
+    default: 'Passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.'
+  },
+  section2Image2: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/image-5.jpg`
+  },
+  section2Image2Title: {
+    type: 'string',
+    default: 'Dan O`Brien'
+  },
+  section2Image2SubTitle: {
+    type: 'string',
+    default: 'Words which don`t look'
+  },
+  section2Image2Description: {
+    type: 'string',
+    default: 'Lorem Ipsum available, but theajority have suffered alteration in some form, by injected humour.'
+  },
+  section2Image3: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/image-6.jpg`
+  },
+  section2Image3Title: {
+    type: 'string',
+    default: 'Amanda Seyfried'
+  },
+  section2Image3SubTitle: {
+    type: 'string',
+    default: 'randomised words'
+  },
+  section2Image3Description: {
+    type: 'string',
+    default: 'Suffered alteration in some form, by injected humour, or randomised words which don`t look alteration in some form.x'
+  },
+  socialImages: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/socials.png`
+  },
+  sectionBreak: {
+    type: 'string',
+    default: `${PLUGIN_URL}/assets/section-break.png`
+  }
+};
+
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  attributes: blockAttributes,
   /**
    * @see ./edit.js
    */
@@ -320,6 +774,16 @@ module.exports = window["wp"]["blockEditor"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
 
 /***/ }),
 
