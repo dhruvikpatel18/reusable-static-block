@@ -21,14 +21,20 @@ import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
 
-// Use the dynamic plugin URL provided by PHP
+/**
+ * Dynamic plugin URL provided by PHP
+ * This is used to get a relative path to the plugin assets
+ */
 const PLUGIN_URL = ReusableStaticBlockData.pluginUrl;
 
-//Define blockAttributes
+/**
+ * Define the block attributes and their default values.
+ * Attributes represent the state data that is stored with the block content.
+ */
 const blockAttributes = {
 	section1SubTitle: {
-		type: 'string',
-		default: 'our work',
+		type: 'string', // Data type for this attribute
+		default: 'our work', // Default value
 	},
 	section1Title: {
 		type: 'string',
@@ -86,8 +92,8 @@ const blockAttributes = {
 		type: 'string',
 		default: 'Suffered alteration in some form, by injected humour, or randomised words which don`t look alteration in some form.',
 	},
-	///////////////////////////////////////////////////////////////////
-
+	
+	// (Repeat similar blocks for section-2)
 	section2SubTitle: {
 		type: 'string',
 		default: 'our team',
@@ -148,6 +154,8 @@ const blockAttributes = {
 		type: 'string',
 		default: 'Suffered alteration in some form, by injected humour, or randomised words which don`t look alteration in some form.x',
 	},
+
+	// (Additional attributes for common)
 	socialImages:{
 		type: 'string',
     	default: `${PLUGIN_URL}/assets/socials.png`,
@@ -158,7 +166,7 @@ const blockAttributes = {
 	},
 	backgroundColor: {
 		type: 'string',
-		default: '#ffffff', // Default white background
+		default: '#ffffff', // Default background color (white)
 	},
 }
 
@@ -169,7 +177,7 @@ const blockAttributes = {
  */
 registerBlockType( metadata.name, {
 
-	attributes: blockAttributes,
+	attributes: blockAttributes, // The block attributes defined above
 	/**
 	 * @see ./edit.js
 	 */

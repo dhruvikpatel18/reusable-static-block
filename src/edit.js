@@ -6,10 +6,10 @@
 import { __ } from '@wordpress/i18n';
 
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
+ * Provides necessary block editor functionalities like useBlockProps, RichText,
+ * InspectorControls, MediaUpload, MediaUploadCheck, etc.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/
  */
 import { 
 	useBlockProps,
@@ -19,6 +19,12 @@ import {
 	MediaUploadCheck,
 } from '@wordpress/block-editor';
 
+/**
+ * Import components from WordPress components package, such as PanelBody,
+ * Button, and ColorPicker.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-components/
+ */
 import { PanelBody, Button, ColorPicker } from "@wordpress/components";
 
 
@@ -31,14 +37,15 @@ import { PanelBody, Button, ColorPicker } from "@wordpress/components";
 import './editor.scss';
 
 /**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
+ * The edit function defines how the block appears and behaves in the editor.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ * @param {Object} props - Properties passed to the block, including attributes and
+ * setAttributes function to update the block's state.
  *
- * @return {Element} Element to render.
+ * @return {JSX.Element} - JSX to render in the block editor.
  */
-export default function Edit({attributes,setAttributes}) {
+export default function Edit(props) {
+    const { attributes, setAttributes } = props; // Destructure props
 	const {
 		section1SubTitle,
 		section1Title,
@@ -73,8 +80,13 @@ export default function Edit({attributes,setAttributes}) {
 		socialImages,
 		sectionBreak,
 		backgroundColor,
-	} = attributes;
+	} = attributes; // Destructure block attributes
 
+    /**
+     * Handles changes to the background color attribute.
+     *
+     * @param {string} newColor - New background color value.
+     */
 	const handleBackgroundColorChange = (newColor) => {
 		setAttributes({backgroundColor: newColor });
 	}
@@ -84,6 +96,7 @@ export default function Edit({attributes,setAttributes}) {
 			{/* Inspector controls for block settings in the sidebar */}
 			<InspectorControls>
 
+				{/* Background Color controls for full block */}
 				<PanelBody title={__("Background Color")} initialOpen={true}>
 					<ColorPicker
 						color={backgroundColor}
@@ -91,6 +104,7 @@ export default function Edit({attributes,setAttributes}) {
 					/>
 				</PanelBody>
 				
+				{/* Media upload controls for section 1 and section 2 */}
 				<PanelBody title={__("Project-1 Image")} initialOpen={false}>
 					{/* Media upload control for selecting the Project-1 image */}
 					<MediaUploadCheck>
@@ -252,9 +266,11 @@ export default function Edit({attributes,setAttributes}) {
 						</div>
 					</MediaUploadCheck>
 				</PanelBody>
-
 			</InspectorControls>
+
+			{/* Main content of the block */}
 			<main>
+				{/* Section 1 with projects details */}
 				<section className="container__section">
 					<div className="container__header">
 						<RichText
@@ -279,7 +295,8 @@ export default function Edit({attributes,setAttributes}) {
 							placeholder="Section 1 Description"
 						/>
 					</div>
-
+					
+					{/* Image cards representing Project images */}
 					<div className="image-row">
 						<div className="image-card">
 							<img src={section1Image1} alt={__("Project 1")} />
@@ -365,10 +382,12 @@ export default function Edit({attributes,setAttributes}) {
 					</div>
 				</section>
 
+			    {/* Section break */}
 				<div class="section-break">
 					<img src={sectionBreak} alt={__("Section Break")}/>
 				</div>
-
+				
+				{/* Section 2 with user details */}
 				<section className="container__section">
 				<div className="container__header">
 						<RichText
@@ -490,7 +509,8 @@ export default function Edit({attributes,setAttributes}) {
 						</div>
 					</div>
 				</section>
-
+				
+				{/* Final section break */}
 				<div class="section-break">
 					<img src={sectionBreak} alt={__("Section Break")}/>
 				</div>

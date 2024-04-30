@@ -8,12 +8,15 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 
 /**
- * The save function is used to render the block content on the front-end.
- * This represents what the editor will save when the block is used.
+ * The `save` function defines the block's structure for the front-end. This represents
+ * what is rendered when the block is displayed in a post or page.
  *
- * @return {Element} Element to render on the front-end.
+ * @param {Object} attributes - Block attributes passed to the function.
+ *
+ * @return {JSX.Element} - JSX to render the block content on the front-end.
  */
 export default function Save({ attributes }) {
+	// Extract block attributes to be used in the rendering process
     const {
         section1SubTitle,
         section1Title,
@@ -48,13 +51,17 @@ export default function Save({ attributes }) {
         socialImages,
         sectionBreak,
         backgroundColor,
-    } = attributes;
+    } = attributes; // Destructure the block attributes
 
+	// Render the block content for the front-end
     return (
         <div {...useBlockProps.save()} className="container" style={{ backgroundColor }}>
+			{/* Main content */}
             <main>
+				{/* First section with its components */}
                 <section className="container__section">
                     <div className="container__header">
+						{/* Render rich text content for section 1 */}
                         <RichText.Content
                             tagName="div"
                             className="container__subtitle"
@@ -72,6 +79,7 @@ export default function Save({ attributes }) {
                         />
                     </div>
 
+					{/* Image cards for the first section */}
                     <div className="image-row">
                         <div className="image-card">
                             <img src={section1Image1} alt="Project 1" />
@@ -130,12 +138,15 @@ export default function Save({ attributes }) {
                     </div>
                 </section>
 
+				{/* Section break */}
                 <div className="section-break">
                     <img src={sectionBreak} alt="Section Break" />
                 </div>
 
+				{/* Second section with its components */}
                 <section className="container__section">
                     <div className="container__header">
+						{/* Render rich text content for section 2 */}
                         <RichText.Content
                             tagName="div"
                             className="container__subtitle"
@@ -153,6 +164,7 @@ export default function Save({ attributes }) {
                         />
                     </div>
 
+					{/* Image cards for the second section */}
                     <div className="image-row">
                         <div className="image-card">
                             <img src={section2Image1} alt="User 1" />
@@ -220,6 +232,7 @@ export default function Save({ attributes }) {
                     </div>
                 </section>
 
+				{/* Final section break */}
                 <div className="section-break">
                     <img src={sectionBreak} alt="Section Break" />
                 </div>

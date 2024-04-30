@@ -30,12 +30,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
+ * Provides necessary block editor functionalities like useBlockProps, RichText,
+ * InspectorControls, MediaUpload, MediaUploadCheck, etc.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/
  */
 
+
+/**
+ * Import components from WordPress components package, such as PanelBody,
+ * Button, and ColorPicker.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-components/
+ */
 
 
 /**
@@ -47,17 +54,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
+ * The edit function defines how the block appears and behaves in the editor.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ * @param {Object} props - Properties passed to the block, including attributes and
+ * setAttributes function to update the block's state.
  *
- * @return {Element} Element to render.
+ * @return {JSX.Element} - JSX to render in the block editor.
  */
-function Edit({
-  attributes,
-  setAttributes
-}) {
+function Edit(props) {
+  const {
+    attributes,
+    setAttributes
+  } = props; // Destructure props
   const {
     section1SubTitle,
     section1Title,
@@ -92,7 +100,13 @@ function Edit({
     socialImages,
     sectionBreak,
     backgroundColor
-  } = attributes;
+  } = attributes; // Destructure block attributes
+
+  /**
+   * Handles changes to the background color attribute.
+   *
+   * @param {string} newColor - New background color value.
+   */
   const handleBackgroundColorChange = newColor => {
     setAttributes({
       backgroundColor: newColor
@@ -542,14 +556,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Use the dynamic plugin URL provided by PHP
+/**
+ * Dynamic plugin URL provided by PHP
+ * This is used to get a relative path to the plugin assets
+ */
 const PLUGIN_URL = ReusableStaticBlockData.pluginUrl;
 
-//Define blockAttributes
+/**
+ * Define the block attributes and their default values.
+ * Attributes represent the state data that is stored with the block content.
+ */
 const blockAttributes = {
   section1SubTitle: {
     type: 'string',
-    default: 'our work'
+    // Data type for this attribute
+    default: 'our work' // Default value
   },
   section1Title: {
     type: 'string',
@@ -607,8 +628,7 @@ const blockAttributes = {
     type: 'string',
     default: 'Suffered alteration in some form, by injected humour, or randomised words which don`t look alteration in some form.'
   },
-  ///////////////////////////////////////////////////////////////////
-
+  // (Repeat similar blocks for section-2)
   section2SubTitle: {
     type: 'string',
     default: 'our team'
@@ -669,6 +689,7 @@ const blockAttributes = {
     type: 'string',
     default: 'Suffered alteration in some form, by injected humour, or randomised words which don`t look alteration in some form.x'
   },
+  // (Additional attributes for common)
   socialImages: {
     type: 'string',
     default: `${PLUGIN_URL}/assets/socials.png`
@@ -679,7 +700,7 @@ const blockAttributes = {
   },
   backgroundColor: {
     type: 'string',
-    default: '#ffffff' // Default white background
+    default: '#ffffff' // Default background color (white)
   }
 };
 
@@ -690,6 +711,7 @@ const blockAttributes = {
  */
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
   attributes: blockAttributes,
+  // The block attributes defined above
   /**
    * @see ./edit.js
    */
@@ -726,14 +748,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * The save function is used to render the block content on the front-end.
- * This represents what the editor will save when the block is used.
+ * The `save` function defines the block's structure for the front-end. This represents
+ * what is rendered when the block is displayed in a post or page.
  *
- * @return {Element} Element to render on the front-end.
+ * @param {Object} attributes - Block attributes passed to the function.
+ *
+ * @return {JSX.Element} - JSX to render the block content on the front-end.
  */
 function Save({
   attributes
 }) {
+  // Extract block attributes to be used in the rendering process
   const {
     section1SubTitle,
     section1Title,
@@ -768,7 +793,9 @@ function Save({
     socialImages,
     sectionBreak,
     backgroundColor
-  } = attributes;
+  } = attributes; // Destructure the block attributes
+
+  // Render the block content for the front-end
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(),
     className: "container",
