@@ -90,12 +90,27 @@ function Edit({
     section2Image3SubTitle,
     section2Image3Description,
     socialImages,
-    sectionBreak
+    sectionBreak,
+    backgroundColor
   } = attributes;
+  const handleBackgroundColorChange = newColor => {
+    setAttributes({
+      backgroundColor: newColor
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
-    className: "container"
+    className: "container",
+    style: {
+      backgroundColor: backgroundColor
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color"),
+    initialOpen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
+    color: backgroundColor,
+    onChange: color => handleBackgroundColorChange(color)
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Project-1 Image"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
@@ -661,6 +676,10 @@ const blockAttributes = {
   sectionBreak: {
     type: 'string',
     default: `${PLUGIN_URL}/assets/section-break.png`
+  },
+  backgroundColor: {
+    type: 'string',
+    default: '#ffffff' // Default white background
   }
 };
 
@@ -691,7 +710,7 @@ const blockAttributes = {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */   "default": () => (/* binding */ Save)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -707,18 +726,219 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
+ * The save function is used to render the block content on the front-end.
+ * This represents what the editor will save when the block is used.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
+ * @return {Element} Element to render on the front-end.
  */
-function save() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, 'Reusable Static Block – hello from the saved content!');
+function Save({
+  attributes
+}) {
+  const {
+    section1SubTitle,
+    section1Title,
+    section1Description,
+    section1Image1,
+    section1Image1Title,
+    section1Image1SubTitle,
+    section1Image1Description,
+    section1Image2,
+    section1Image2Title,
+    section1Image2SubTitle,
+    section1Image2Description,
+    section1Image3,
+    section1Image3Title,
+    section1Image3SubTitle,
+    section1Image3Description,
+    section2SubTitle,
+    section2Title,
+    section2Description,
+    section2Image1,
+    section2Image1Title,
+    section2Image1SubTitle,
+    section2Image1Description,
+    section2Image2,
+    section2Image2Title,
+    section2Image2SubTitle,
+    section2Image2Description,
+    section2Image3,
+    section2Image3Title,
+    section2Image3SubTitle,
+    section2Image3Description,
+    socialImages,
+    sectionBreak,
+    backgroundColor
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(),
+    className: "container",
+    style: {
+      backgroundColor
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: "container__section"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "container__subtitle",
+    value: section1SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "container__title",
+    value: section1Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "container__description",
+    value: section1Description
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section1Image1,
+    alt: "Project 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-title",
+    value: section1Image1Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section1Image1SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-description",
+    value: section1Image1Description
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section1Image2,
+    alt: "Project 2"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-title",
+    value: section1Image2Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section1Image2SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-description",
+    value: section1Image2Description
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section1Image3,
+    alt: "Project 3"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-title",
+    value: section1Image3Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section1Image3SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-description",
+    value: section1Image3Description
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "section-break"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: sectionBreak,
+    alt: "Section Break"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: "container__section"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container__header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "container__subtitle",
+    value: section2SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "container__title",
+    value: section2Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "container__description",
+    value: section2Description
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section2Image1,
+    alt: "User 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "social-bar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: socialImages,
+    alt: "Social icons"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-title",
+    value: section2Image1Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section2Image1SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-description",
+    value: section2Image1Description
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section2Image2,
+    alt: "User 2"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "social-bar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: socialImages,
+    alt: "Social icons"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-title",
+    value: section2Image2Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section2Image2SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-description",
+    value: section2Image2Description
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: section2Image3,
+    alt: "User 3"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "social-bar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: socialImages,
+    alt: "Social icons"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-title",
+    value: section2Image3Title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-subtitle",
+    value: section2Image3SubTitle
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "div",
+    className: "card-description",
+    value: section2Image3Description
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "section-break"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: sectionBreak,
+    alt: "Section Break"
+  }))));
 }
 
 /***/ }),

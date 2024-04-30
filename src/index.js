@@ -156,6 +156,10 @@ const blockAttributes = {
 		type: 'string',
     	default: `${PLUGIN_URL}/assets/section-break.png`,
 	},
+	backgroundColor: {
+		type: 'string',
+		default: '#ffffff', // Default white background
+	},
 }
 
 /**

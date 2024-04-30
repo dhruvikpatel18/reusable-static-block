@@ -1,108 +1,137 @@
 /**
- * The following styles get applied both on the front of your site
+ * The following styles get applied both on the front of our site
  * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
  */
 
+ // Variables for reusable values
+$container-padding: 80px;
+$container-width: 900px;
+
+$header-margin-bottom: 20px;
+$subtitle-color: #676767;
+$subtitle-font-size: 18px;
+$title-color: #001a53;
+$title-font-size: 32px;
+$title-font-weight: bold;
+$description-font-size: 16px;
+
+$image-card-width: 40%;
+$image-card-padding: 10px;
+$image-card-transition: 0.3s;
+$image-width: 275px;
+
+$social-bar-bottom: 157px;
+$social-bar-left: 13px;
+$social-bar-width: 275px;
+$social-bar-height: 50px;
+$social-bar-bg-color: rgba(12, 15, 71, 0.5); // Transparent blue
+$social-bar-opacity-default: 0; // Invisible by default
+$social-bar-transition: 0.5s;
+$social-bar-z-index: 10; // Ensure it stays above other elements
+
+// Container styles
 .container {
-	padding: 80px;
-	background-color: white;
-	width: 900px;
+  padding: $container-padding;
+  width: $container-width;
 }
 
 .container__header {
-	margin-bottom: 20px;
+  margin-bottom: $header-margin-bottom;
+
+  .container__subtitle {
+    color: $subtitle-color;
+    font-size: $subtitle-font-size;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .container__title {
+    color: $title-color;
+    font-size: $title-font-size;
+    font-weight: $title-font-weight;
+    margin-bottom: 15px;
+  }
+
+  .container__description {
+    font-size: $description-font-size;
+    color: $subtitle-color;
+  }
 }
 
-.container__header .container__subtitle {
-	color: #676767;
-	font-size: 18px;
-	font-weight: 500;
-	text-transform: uppercase;
-	padding: 0;
-	margin: 0;
-}
-
-.container__header .container__title {
-	color: #001a53;
-	font-size: 32px;
-	font-weight: bold;
-	margin-bottom: 15px;
-}
-
-.container__header .container__description {
-	font-size: 16px;
-	color: #676767;
-}
-
+// Styles for the image row and cards
 .image-row {
-	display: flex;
-	justify-content: space-between;
-	
+  display: flex;
+  justify-content: space-between;
 }
 
 .image-card {
-	width: 40%;
-	text-align: center;
-	padding: 10px;
+  width: $image-card-width;
+  text-align: center;
+  padding: $image-card-padding;
+  position: relative;
+  transition: box-shadow $image-card-transition;
+
+  img {
+    width: $image-width;
+    height: auto;
+    transition: opacity $image-card-transition;
 	position: relative;
-	transition: box-shadow 0.3s;
+		&:hover {
+			& + .social-bar {
+				opacity: 1;
+			}
+		}
+  }
+  &:hover {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  // Social bar with hover trigger
+  .social-bar {
+    position: absolute;
+    bottom: $social-bar-bottom;
+    left: $social-bar-left;
+    width: $social-bar-width;
+    height: $social-bar-height;
+    background-color: $social-bar-bg-color;
+    opacity: $social-bar-opacity-default; // Invisible by default
+    transition: opacity $social-bar-transition; // Smooth transition
+    z-index: $social-bar-z-index; // Ensure it stays above other elements
+
+    img {
+      width: 50%;
+      margin: 20px 0;
+    }
+  }
+
+  .card-title {
+    color: $title-color;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+    color: $subtitle-color;
+    font-weight: 200;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    color: #676767;
+    font-size: 14px;
+  }
 }
 
-.image-card img {
-	width: 275px;
-	height: auto;
-	transition: opacity 0.3s;
-	position: relative; /* Needed for absolute positioning */
-}
-
-.social-bar {
-	position: absolute;
-	bottom: 157px;
-	width: 275px;
-	left: 13px;
-	height: 50px;
-	background-color: rgba(12, 15, 71, 0.5); /* Transparent blue */
-	opacity: 0; /* Invisible by default */
-	transition: opacity 0.5s; /* Smooth transition */
-}
-
-.image-card img:hover + .social-bar {
-	opacity: 1; /* Social bar appears on hover */
-}
-
-.social-bar img {
-	width: 50%;
-	margin: 20px 0;
-}
-
-.image-card .card-title {
-	color: #001a53;
-	font-size: 20px;
-	font-weight: bold;
-	margin-top: 10px;
-}
-
-.image-card .card-subtitle {
-	font-size: 12px;
-	color: #676767;
-	font-weight: 200;
-	margin-bottom: 10px;
-}
-
-.image-card .card-description {
-	color: #676767;
-	font-size: 14px;
-	color: #666;
-}
-
+// Container sections
 .container__section {
-	margin-bottom: 52px;
+  margin-bottom: 52px;
 }
 
+// Section break styles
 .section-break {
-	margin: 30px;
-	display: flex;
-	justify-content: center;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
 }

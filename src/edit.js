@@ -19,7 +19,7 @@ import {
 	MediaUploadCheck,
 } from '@wordpress/block-editor';
 
-import { PanelBody, Button } from "@wordpress/components";
+import { PanelBody, Button, ColorPicker } from "@wordpress/components";
 
 
 /**
@@ -71,13 +71,26 @@ export default function Edit({attributes,setAttributes}) {
 		section2Image3SubTitle,
 		section2Image3Description,
 		socialImages,
-		sectionBreak
+		sectionBreak,
+		backgroundColor,
 	} = attributes;
 
+	const handleBackgroundColorChange = (newColor) => {
+		setAttributes({backgroundColor: newColor });
+	}
+
 	return (
-		<div {...useBlockProps()} className="container">
+		<div {...useBlockProps()} className="container" style={{backgroundColor: backgroundColor}}>
 			{/* Inspector controls for block settings in the sidebar */}
 			<InspectorControls>
+
+				<PanelBody title={__("Background Color")} initialOpen={true}>
+					<ColorPicker
+						color={backgroundColor}
+						onChange={(color) => handleBackgroundColorChange(color)}
+					/>
+				</PanelBody>
+				
 				<PanelBody title={__("Project-1 Image")} initialOpen={false}>
 					{/* Media upload control for selecting the Project-1 image */}
 					<MediaUploadCheck>
@@ -106,7 +119,7 @@ export default function Edit({attributes,setAttributes}) {
 				</PanelBody>
 
 				<PanelBody title={__("Project-2 Image")} initialOpen={false}>
-					{/* Media upload control for selecting the Project-1 image */}
+					{/* Media upload control for selecting the Project-2 image */}
 					<MediaUploadCheck>
 						<div>
 							<MediaUpload
@@ -120,7 +133,7 @@ export default function Edit({attributes,setAttributes}) {
 									</Button>
 								)}
 							/>
-							{/* Display a preview of the selected Project-1 image */}
+							{/* Display a preview of the selected Project-2 image */}
 							{section1Image2 && (
 								<img
 									src={section1Image2}
